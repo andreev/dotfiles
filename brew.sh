@@ -4,12 +4,12 @@ if [[ -x /usr/local/bin/brew ]]; then
   brew update
   brew upgrade
 
+  brew tap caskroom/cask
   brew tap caskroom/versions
   brew tap caskroom/fonts
   brew tap thoughtbot/formulae
 
   declare -a brews=(
-    "caskroom/cask/brew-cask"
     "curl"
     "git"
     "go"
@@ -22,7 +22,6 @@ if [[ -x /usr/local/bin/brew ]]; then
     "rcm"
     "ruby-build"
     "ssh-copy-id"
-    "tmux"
     "wget"
     "zsh"
     "zsh-completions"
@@ -32,6 +31,7 @@ if [[ -x /usr/local/bin/brew ]]; then
   declare -a casks=(
     "bartender"
     "caffeine"
+    "cloud"
     "dropbox"
     "flash"
     "flux"
@@ -39,25 +39,22 @@ if [[ -x /usr/local/bin/brew ]]; then
     "google-drive"
     "iterm2"
     "java"
-    "mac2imgur"
     "mplayerx"
-    "navicat-for-postgresql"
     "numi"
     "qlcolorcode"
+    "qlimagesize"
     "qlmarkdown"
     "qlstephen"
-    "rescuetime"
-    "sequel-pro"
     "skype"
     "slack"
     "slate"
     "sourcetree"
-    "sublime-text3"
+    "sublime-text"
+    "telegram"
     "the-unarchiver"
     "transmission"
-    "tunnelbear"
+    "tunnelblick"
     "vagrant"
-    "vagrant-manager"
     "virtualbox"
   )
 
@@ -69,7 +66,7 @@ if [[ -x /usr/local/bin/brew ]]; then
     brew cask install $name
   done
 
-  brew link curl openssl --force
+  brew link curl --force
 
   brew cleanup
 fi
